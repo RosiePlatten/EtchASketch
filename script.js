@@ -6,7 +6,9 @@ setUpGrid(gridSize,mode);
 
 function getPageElements(){
     canvas = document.querySelector('#canvas');
-    clearButton = document.querySelector('#clearButton')
+    clearButton = document.querySelector('#clearButton');
+    sizeSlider = document.querySelector('#sizeSlider');
+    sizeLabel = document.querySelector('#sizeLabel');
 }
 function setUpGrid(gridSize,mode){
     canvas.style.display = "grid";
@@ -32,3 +34,15 @@ clearButton.addEventListener('click',function(){
         gridSquares[i].style.backgroundColor="white";
     }
 })
+sizeSlider.addEventListener('input', function(){
+    sizeLabel.textContent = this.value+"x"+this.value;
+    deleteGridSquares();
+    setUpGrid(this.value);
+});
+
+function deleteGridSquares(){
+    for(let i=0; i<gridSquares.length; i++){
+        canvas.removeChild(gridSquares[i]);
+    }
+}
+
