@@ -3,25 +3,22 @@
     <head>
         <script src:"script.js" defer></script>
         <link rel="stylesheet" href="styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
         <title>Etch-A-Sketch</title> 
     </head>
     <body>
         <div id= "content">
-            <div id ="title">TITLE</div>
-            <div id="drawingGrid">DRAWING GRID</div>
-            <div id="modeSelector"> 
-                <button id="basicButton"  class = "modeButtons" type="button">Basic</button>
-                <button id="gradientButton" class = "modeButtons"   type="button">Gradient</button>
-                <button id="rainbowButton" class = "modeButtons"  type="button">Rainbow</button>
-            </div>
-            <div id="sizeSelector">
-                <div class="sizeLabels">Grid size</div>
-                <div class="sizeLabels" id="sizeLabel">4x4</div>
-                <input type="range" min = "1" max = "20" id="sizeSlider">
-            </div>
-            <div id="clearArea">
-                <button type="button" id="clearButton">Clear Canvas</button>
-            </div>
+            <div id ="title">Etch - A - Sketch</div>
+            <div id="canvas"></div>
+            <button id="basicButton"  class = "modeButtons" type="button">Classic Mode</button>
+            <button id="gradientButton" class = "modeButtons"   type="button">Gradient Mode</button>
+            <button id="rainbowButton" class = "modeButtons"  type="button">Rainbow Mode</button>
+            <div class="sizeLabels" id="gridSize">Grid size</div>
+            <div class="sizeLabels" id="sizeLabel">4x4</div>
+            <input type="range" min = "1" max = "20" id="sizeSlider">
+            <button type="button" id="clearButton">Clear Canvas</button>
+            <div id="leftKnob" class="knob"></div>
+            <div id="rightKnob" class="knob"></div>
         </div>
     </body>
 </html>
