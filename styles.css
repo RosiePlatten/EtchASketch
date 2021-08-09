@@ -94,3 +94,6 @@ button{
     grid-column: 12/15;
     grid-row: 2/4;
 }
+.slider::-moz-range-thumb{
+    background: gold;
+}
