@@ -30,6 +30,7 @@ body{
     background-color: white;
     grid-row: 2/9;
     grid-column: 2/9;
+    display: grid;
 
 }
 .knob{
@@ -93,7 +94,4 @@ button{
 #sizeSlider{
     grid-column: 12/15;
     grid-row: 2/4;
-}
-.slider::-moz-range-thumb{
-    background: gold;
 }

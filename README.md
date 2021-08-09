@@ -1,3 +1,6 @@
-An Etch-A-Sketch / Sketch Pad program, when the user drags their mouse over a square it goes black and they can clear the screen if they press a button.
+An Etch-A-Sketch / Sketch Pad program, where a user is able to draw on a canvas by dragging their mouse.
 
-Initialy a 16x16 grid
+Initial Features
+    Starts with a 16x16 grid of white squares.
+    When the user drags their mouse over a white square, it turns black
+    When the user clicks the clear button, the canvas goes white again and the user can start again.
