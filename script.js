@@ -19,6 +19,7 @@ function setUpGrid(gridSize,mode){
     for(let c=0; c<gridSize ; c++){
         for(let r=0; r<gridSize; r++){
             let gridSquare = document.createElement('div');
+            gridSquare.style.backgroundColor="rgba(0,0,0,0)"
             gridSquare.addEventListener("mouseover",function(){
                 this.style.backgroundColor=getPenColor(this);
             });
@@ -30,7 +31,7 @@ function setUpGrid(gridSize,mode){
 function getPenColor(gridSquare){
     switch (mode){
         case "basic":
-            return "black";
+            return "rgba(0,0,0,1)";
             break;
         case "rainbow":
             return generateRainbowColor();
@@ -59,17 +60,30 @@ function deleteGridSquares(){
 
 rainbowButton.addEventListener("click", function(){
     mode="rainbow";
+    deleteGridSquares();
+    setUpGrid(sizeSlider.value);
 })
 gradientButton.addEventListener("click", function(){
     mode="gradient";
+    deleteGridSquares();
+    setUpGrid(sizeSlider.value);
 })
 classicButton.addEventListener("click", function(){
     mode="basic";
+    deleteGridSquares();
+    setUpGrid(sizeSlider.value);
 })
  function generateRainbowColor(){
-     return "rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")";
+     return "rgba("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+",1)";
  }
 function generateGradientColor(gridSquare){
-    let currentColor = gridSquare.style.backgroundColor;
-    return "black";
+    let color = gridSquare.style.backgroundColor;
+    color=color.split(",");
+    let alpha=color.pop();
+    alpha=alpha.substring(0,alpha.length-1);
+    alpha = +alpha + +0.1;
+    alpha=alpha+")";
+    color.push(alpha);
+    color=color.join(",");
+    return color;
 }
